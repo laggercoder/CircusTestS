@@ -20,7 +20,6 @@ namespace Manager
             canCut = true;
             if (OnWin == null) OnWin = new UnityEvent();
             if (OnLose == null) OnLose = new UnityEvent();
-            OnWin.AddListener(UiWInGame);
         }
         public void Win()
         {

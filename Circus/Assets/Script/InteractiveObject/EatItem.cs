@@ -8,7 +8,7 @@ public class EatItem : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D coll)
     {
         if (!coll.CompareTag("Star")) return;
-        GameManager.Instance.PickupStar();
+        GameManager.Instance.countStart++;
         coll.gameObject.SetActive(false);
     }
 }
