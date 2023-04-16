@@ -47,7 +47,6 @@ namespace Manager
         {
             if (id < 0 || id > gameScenes.Length) throw new IndexOutOfRangeException();
             Destroy(currentScene);
-            currentSceneID = id;
             currentScene = Instantiate(gameScenes[id]); 
             UICamera.SetActive(false);
             MainUI.SetActive(false);
@@ -56,15 +55,13 @@ namespace Manager
         [ContextMenu("Next")]
         public void NextGame()
         {
-            currentSceneID = currentSceneID + 1;
-            SetGame(currentSceneID);
+            SetGame(currentSceneID + 1);
         }
 
         [ContextMenu("Previous")]
         public void PreviousGame()
         {
-            currentSceneID = currentSceneID - 1;
-            SetGame(currentSceneID);
+            SetGame(currentSceneID - 1);
         }
 
         void Start()
